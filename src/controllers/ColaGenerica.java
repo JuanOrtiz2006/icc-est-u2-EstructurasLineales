@@ -21,12 +21,12 @@ public class ColaGenerica <T> {
         return head == null;
     }
     public void add(T value){
-    NodeGeneric<T> newNode = new NodeGeneric<T> (value);
+        NodeGeneric<T> newNode = new NodeGeneric<T>(value);
         if(isEmpty()){
-            head = new NodeGeneric<T>(value);
+            head = newNode;
             tail = head;
         } else{
-            tail.setNext(new NodeGeneric<T>(value));
+            tail.setNext(newNode);
             tail = newNode;            
         }
         length++;
