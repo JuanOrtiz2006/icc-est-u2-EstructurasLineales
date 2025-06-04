@@ -29,6 +29,6 @@ public class Node {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "Value: " + value + "Next: " + next.value;
+        return "Value: " + value;
     }
 }

@@ -1,20 +1,36 @@
+import controllers.Cola;
+import controllers.ColaGenerica;
 import controllers.Stack;
-
+import controllers.StackGeneric;
+import models.*;
 public class App {
     public static void main(String[] args) throws Exception {
-        Stack stack = new Stack();
+        /*StackGeneric<Integer> stackGeneric = new StackGeneric<Integer>();
+    
+        stackGeneric.push(1);
+        stackGeneric.push(4);
+        stackGeneric.printStack();
+        System.out.println("Length: " + stackGeneric.length);
+
+        StackGeneric<String> stackGenericString = new StackGeneric<String>();
+        stackGenericString.push("Uno");
+        stackGenericString.push("Cuatro");
+        stackGenericString.printStack();
+        */
+
         
-        stack.push(10);
-        stack.push(-1);
-        stack.push(0);
-        stack.push(5);
+        Persona p1 = new Persona("Pablo");
+        Persona p2 = new Persona("Juan");
+        Persona p3 = new Persona("Maria");
 
-        stack.printStack();
-
-        stack.pop();
-        stack.peek();
-
-        stack.printStack();
-
+        ColaGenerica<Persona> colaPersonas = new ColaGenerica<Persona>();
+        colaPersonas.add(p1);
+        colaPersonas.add(p2);   
+        colaPersonas.add(p3);
+        System.out.println("Size: " + colaPersonas.size());
+        colaPersonas.printCola();
+        System.out.println("Atienes a la persona => " + colaPersonas.remove());
+        System.out.println("Size: " + colaPersonas.size());
+        colaPersonas.printCola();
     }
 }
