@@ -29,8 +29,15 @@ public class App {
         colaPersonas.add(p3);
         System.out.println("Size: " + colaPersonas.size());
         colaPersonas.printCola();
-        System.out.println("Atienes a la persona => " + colaPersonas.remove());
+        /*System.out.println("Atienes a la persona => " + colaPersonas.remove());
         System.out.println("Size: " + colaPersonas.size());
+        colaPersonas.printCola();*/
+
+        
+        System.out.println("Persona encontrada: " + colaPersonas.findByName("Maria"));
+        Persona personaEliminada = colaPersonas.removeByName("Maria");
+        System.out.println("Persona eliminada: " + personaEliminada);
+
         colaPersonas.printCola();
     }
 }

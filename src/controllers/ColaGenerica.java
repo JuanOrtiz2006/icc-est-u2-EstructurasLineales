@@ -66,4 +66,36 @@ public class ColaGenerica <T> {
         return length;
     }
 
+    public T findByName(String name){
+        NodeGeneric<T> current = head;
+        while (current != null) {
+            if (current.getValue().toString() == name) {
+                return current.getValue();
+            }
+            current = current.getNext();
+        }
+
+        return null;
+    }
+
+    public T removeByName(String name){
+        NodeGeneric<T> current = head;
+        NodeGeneric<T> previous = null;
+        while (current != null) {
+            if (current.getValue().toString() == name) {
+                if (previous == null) {
+                    head = current.getNext();
+                } else {
+                    previous.setNext(current.getNext());
+                }
+                length--;
+                return current.getValue();
+            }
+            previous = current;
+            current = current.getNext();
+        }
+
+        return null;
+    }
+
 }
