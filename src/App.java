@@ -1,8 +1,6 @@
-import controllers.Cola;
-import controllers.ColaGenerica;
-import controllers.Stack;
 import controllers.StackGeneric;
-import models.*;
+import ejercicio_01_sign.*;
+import ejercicio_02_sorting.StackSorter;
 public class App {
     public static void main(String[] args) throws Exception {
         /*StackGeneric<Integer> stackGeneric = new StackGeneric<Integer>();
@@ -19,7 +17,7 @@ public class App {
         */
 
         
-        Persona p1 = new Persona("Pablo");
+        /*Persona p1 = new Persona("Pablo");
         Persona p2 = new Persona("Juan");
         Persona p3 = new Persona("Maria");
 
@@ -31,13 +29,34 @@ public class App {
         colaPersonas.printCola();
         /*System.out.println("Atienes a la persona => " + colaPersonas.remove());
         System.out.println("Size: " + colaPersonas.size());
-        colaPersonas.printCola();*/
-
-        
+        colaPersonas.printCola();
         System.out.println("Persona encontrada: " + colaPersonas.findByName("Maria"));
         Persona personaEliminada = colaPersonas.removeByName("Maria");
         System.out.println("Persona eliminada: " + personaEliminada);
 
         colaPersonas.printCola();
+        */
+
+        String texto = "()[]{}";
+
+        System.out.println("Texto:" + texto);
+        SignValidator validar = new SignValidator();
+        boolean respuesta = validar.isValid(texto);
+
+        System.out.println("El texto \"" + texto + "\" es : " + respuesta);
+        
+        StackGeneric<Integer> stack = new StackGeneric<>();
+        stack.push(5);
+        stack.push(3);
+        stack.push(8);
+        stack.push(1);
+        stack.push(4);
+        System.out.println("Pila original:");
+        stack.printStack();
+        StackSorter sorter = new StackSorter();
+        sorter.sortStack(stack);
+        System.out.println("Pila ordenada:");
+        stack.printStack();
+
     }
 }
